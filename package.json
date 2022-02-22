@@ -1,0 +1,11 @@
+{
+  "name": "movies",
+  "version": "1.0.0",
+  "description": "Movies manager",
+  "main": "server.js",
+  "author": "Nicolas Henry",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
