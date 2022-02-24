@@ -1,34 +1,35 @@
 'use strict';
+const movieValidator = require('../validations/movie');
 const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Movie extends Model {}
   Movie.init({
-    id: {
-      type: DataTypes.INTEGER,
-      autoIncrement: true,
-      primaryKey: true
-    },
     title: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      validate : movieValidator.title,
     },
     type: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      validate : movieValidator.type,
     },
     year: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      validate : movieValidator.year,
     },
     thumbnail: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      validate : movieValidator.thumbnail,
     },
     slug: {
       type: DataTypes.STRING,
       allowNull: false,
+      validate : movieValidator.slug,
     },
   }, {
     sequelize,
