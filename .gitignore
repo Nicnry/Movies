@@ -133,3 +133,5 @@ dist
 
 # Custom
 package-lock.json
+
+config/config.json

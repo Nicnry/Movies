@@ -1,7 +1,9 @@
-import 'dotenv/config';
-import express from 'express';
-import cors from 'cors';
+require('dotenv').config()
+const express = require("express");
+const cors = require("cors");
 const app = express();
+const moviesRoutes = require('./routes/movies');
+
 const PORT = process.env.PORT || 8080;
 var corsOptions = {
   origin: `http://localhost:${PORT}`
@@ -9,10 +11,12 @@ var corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use('/api/movies', moviesRoutes);
 
 app.get("/", (req, res) => {
-  res.json({ message: "Hello World!" });
+  res.send('Page d\'accueil');
 });
+
 // set port, listen for requests
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
