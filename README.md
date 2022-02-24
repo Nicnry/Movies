@@ -12,6 +12,8 @@ Le but de ce projet est de travailler avec NodeJS et de tester différentes appr
 3. Lancer `npm install`.
 4. Renommer `.env.example` en `.env` et le completer.
 5. Renommer `config/config.example.json` en `config/config.json` et le completer.
-6. Lancer le programme avec `nodemon server.js` à la racine de `movies`.
+6. Lancer les migrations `npx sequelize-cli db:migrate`.
+7. Lancer les seeders `npx sequelize-cli db:seed:all`.
+8. Lancer le programme avec `nodemon server.js` à la racine de `movies`.
 
 
